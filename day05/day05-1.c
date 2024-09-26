@@ -73,7 +73,9 @@ int main(void) {
 	*/
 	for (int i = 0; i < N; i++) {
 		printf("%d, %s, %d", p[i].snum, p[i].score, p[i].name);
+		printf("%d, %s, %d\n", p[i].snum, p[i].name, p[i].score);
 	}
+
 	free(p);
 	p = NULL;
 
