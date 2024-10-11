@@ -14,7 +14,7 @@ int main(void) {
 
 	srand(time(NULL));
 
-	for (count = 0; count < 1000000000; count++) {
+
 	for (count = 0; count < 1000000001; count++) {
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
@@ -27,14 +27,14 @@ int main(void) {
 			c = count / 10000000;
 			
 			f = 4.0 * circle / count;
-			printf("%d%%ÁøÇà.. ¿øÁÖÀ² : %f", c, f);
+			printf("%d%%ÃÃ¸Ã‡Ã .. Â¿Ã¸ÃÃ–Ã€Â² : %f", c, f);
 			int k = c / 5;
 
 			
 			for (int v = 0; v < k; v++)
-				printf("¡á");
+				printf("Â¡Ã¡");
 			for (int j = 20 - k; j > 0; j--) {
-				printf("¡à");
+				printf("Â¡Ã ");
 			}
 
 			
