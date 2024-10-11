@@ -9,10 +9,13 @@ int main(void) {
 
 	int count = 0, circle = 0;
 	int r = 1;
+	float f = 0;
+	int c = 0;
 
 	srand(time(NULL));
 
 	for (count = 0; count < 1000000000; count++) {
+	for (count = 0; count < 1000000001; count++) {
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
 
@@ -21,9 +24,9 @@ int main(void) {
 		}
 
 		if (count % 10000000 == 0) {
-			int c = count / 10000000;
-			float f = 0;
-			f = (float)(4 * circle) / count;
+			c = count / 10000000;
+			
+			f = 4.0 * circle / count;
 			printf("%d%%진행.. 원주율 : %f", c, f);
 			int k = c / 5;
 
