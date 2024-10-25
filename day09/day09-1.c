@@ -6,6 +6,11 @@ struct Vector {
 	int z;
 };
 
+int pl(struct Vector v1, struct Vector v2);
+int mi(struct Vector v1, struct Vector v2);
+int in(struct Vector v1, struct Vector v2);
+int out(struct Vector v1, struct Vector v2);
+
 int main(void) {
 	struct Vector vec1;
 	struct Vector vec2;
@@ -36,23 +41,22 @@ int main(void) {
 
 		switch (n) {
 		case 1: {
-			printf("벡터의 합은 v1 + v2 = ( %d, %d, %d)\n", vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z);
+			pl(vec1, vec2);
 			break;
 		}
 
 		case 2: {
-			printf("벡터의 차는 v1 - v2 = ( %d, %d, %d)\n", vec1.x - vec2.x, vec1.y - vec2.y, vec1.z - vec2.z);
+			mi(vec1, vec2);
 			break;
 		}
 
 		case 3: {
-			printf("벡터의 내적은 v1 * v2 = %d\n", vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
+			in(vec1, vec2);
 			break;
 		}
 
 		case 4: {
-			printf("벡터의 외적은 v1 x v2 = ( %d, %d, %d)\n", 
-				(vec1.y * vec2.z) - (vec1.z * vec2.y), (vec1.z * vec2.x) - (vec1.x * vec2.z), (vec1.x * vec2.y) - (vec1.y * vec2.x));
+			out(vec1, vec2);
 			break;
 		}
 
@@ -72,4 +76,21 @@ int main(void) {
 		for (int i = 0; i < 35; i++)
 			printf("-");
 	}
+}
+
+int pl(struct Vector v1, struct Vector v2) {
+	printf("벡터의 합은 v1 + v2 = ( %d, %d, %d)\n", v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+}
+
+int mi(struct Vector v1, struct Vector v2) {
+	printf("벡터의 차는 v1 - v2 = ( %d, %d, %d)\n", v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+}
+
+int in(struct Vector v1, struct Vector v2) {
+	printf("벡터의 내적은 v1 * v2 = %d\n", v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
+}
+
+int out(struct Vector v1, struct Vector v2) {
+	printf("벡터의 외적은 v1 x v2 = ( %d, %d, %d)\n",
+		(v1.y * v2.z) - (v1.z * v2.y), (v1.z * v2.x) - (v1.x * v2.z), (v1.x * v2.y) - (v1.y * v2.x));
 }
